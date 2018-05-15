@@ -8,7 +8,8 @@ reverseMRsim
 A function to similate the performance of different MR methods from the MendelianRandomization package in scenarios of reverse causality.
 }
 \usage{
-reverseMRsim(n = 1000, nSNP = 3, MAF = c(0.2, 0.2, 0.2), gamma0 = 0, gammaX = c(0.2, 0.2, 0.2), varM = 1, beta0 = 0, betaM = c(0, 0.1), varY = 1, nSim = 100, plot.pdf = T, plot.name = "reverseMRsim.pdf", alpha_level = 0.05, SEED = 1)
+reverseMRsim(n = 1000, nSNP = 3, MAF = c(0.2, 0.2, 0.2), gamma0 = 0, gammaX = c(0.2, 0.2, 0.2), varM = 1, beta0 = 0, 
+betaM = c(0, 0.1), varY = 1, nSim = 100, plot.pdf = T, plot.name = "reverseMRsim.pdf", alpha_level = 0.05, SEED = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

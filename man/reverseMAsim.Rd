@@ -8,7 +8,8 @@ reverseMAsim
 A function to similate the performance of the mediate function from the mediation package in scenarios of reverse causality.
 }
 \usage{
-reverseMAsim(n = 1000, pX = 0.2, gamma0 = 0, gammaX = 0.1, varM = 1, beta0 = 0, betaX = 1, betaM = c(0, 0.1, 0.2), varY = 1, nSim = 100, nSimImai = 1000, SEED = 1, plot.pdf = T, plot.name = "reverseMAsim.pdf", alpha_level = 0.05)
+reverseMAsim(n = 1000, pX = 0.2, gamma0 = 0, gammaX = 0.1, varM = 1, beta0 = 0, betaX = 1, betaM = c(0, 0.1, 0.2), 
+varY = 1, nSim = 100, nSimImai = 1000, SEED = 1, plot.pdf = T, plot.name = "reverseMAsim.pdf", alpha_level = 0.05)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
