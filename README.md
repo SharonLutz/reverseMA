@@ -1,7 +1,7 @@
-# reverseC
+## reverseC
 This package examines the performance of mediation analysis (reverseMA) and Mendelian Randomization (reverseMR) methods in the presence of reverse causality. 2 functions determine the power and type 1 error rate to detect the indirect and direct path when the mediator and outcome are switched. (reverseMAsim and reverseMRsim) 2 functions implement these methods for user inputted data. (reverseMAdata and reverseMRdata).
 
-# Installation
+## Installation
 ```
 install.packages("devtools") # devtools must be installed first
 install.packages("mediation")
@@ -10,8 +10,7 @@ install.packages("MendelianRandomization")
 devtools::install_github("SharonLutz/reverseC")
 ```
 
-# Example
-
+## Example
 ```
 library(reverseC)
 ?reverseMRsim # For details on this function
@@ -22,9 +21,8 @@ plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1)
 
 ```
 
-# Output
+## Output
 For this example, we get the following matrix of results and corresponding plot.
-
 ```
 [[1]]
              [,1] [,2]
