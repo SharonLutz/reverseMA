@@ -1,5 +1,5 @@
 # reverseC
-This package examines the performance of mediation analysis (reverseMA) and Mendelian Randomization (reverseMR) methods in the presence of reverse causality. There are functions to test the performance of each in a hypothetical scenario (reverseMAsim, reverseMRsim) and functions to test the performance of each on a user input data set (reverseMAdata, reverseMRdata).
+This package examines the performance of mediation analysis (reverseMA) and Mendelian Randomization (reverseMR) methods in the presence of reverse causality. 2 functions determine the power and type 1 error rate to detect the indirect and direct path when the mediator and outcome are switched. (reverseMAsim and reverseMRsim) 2 functions implement these methods for user inputted data. (reverseMAdata and reverseMRdata).
 
 # Installation
 ```
