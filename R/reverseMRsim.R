@@ -38,8 +38,8 @@ function(n=1000,nSNP=3,MAF=c(0.2,0.2,0.2),gamma0=0,gammaX=c(0.2,0.2,0.2),varM=1,
       }
       
       # Generate M and Y
-      M <- rnorm(n,gamma0 + X%*%gammaX,varM)
-      Y <- rnorm(n,beta0 + betaM[bM.ind]*M,varY)
+      M <- rnorm(n,gamma0 + X%*%gammaX,sqrt(varM))
+      Y <- rnorm(n,beta0 + betaM[bM.ind]*M,sqrt(varY))
       
       # Get the input for MR methods
       betaXM <- c(); betaXMse <- c()
