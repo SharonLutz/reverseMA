@@ -5,7 +5,7 @@ This package examines the performance of mediation analysis and Mendelian Random
 ```
 install.packages("devtools") # devtools must be installed first
 install.packages("mediation")
-install.packages("MendelianRandomization")
+install.packages("MendelianRandomization") #you need R v3.4 or higher
 
 devtools::install_github("SharonLutz/reverseC")
 ```
