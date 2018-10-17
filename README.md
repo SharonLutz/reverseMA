@@ -1,5 +1,5 @@
 ## reverseC
-This package examines the performance of mediation analysis and [Mendelian Randomization](https://github.com/SharonLutz/reverseC/tree/master/man) methods.
+This package examines the performance of [mediation analysis](https://github.com/SharonLutz/reverseC/blob/master/R/README.md) and [Mendelian Randomization](https://github.com/SharonLutz/reverseC/tree/master/man) methods in the presence of reverse causality.
 
 ## Installation
 ```
