@@ -1,6 +1,6 @@
 
 ## reverseC for Mendelian Randomization
-This package examines the performance of Mendelian Randomization (MR) methods in the presence of reverse causality.
+These functions examines the performance of Mendelian Randomization (MR) methods in the presence of reverse causality.
 
 ## Installation
 ```
