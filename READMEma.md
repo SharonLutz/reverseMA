@@ -1,7 +1,7 @@
 
 
 ## reverseC for Mediation Analysis
-This package examines the performance of mediation analysis methods in the presence of reverse causality.
+These functions examines the performance of mediation analysis methods in the presence of reverse causality.
 
 ## Installation
 ```
