@@ -46,3 +46,27 @@ For the example, we get corresponding plot. In the plot below, the methods endin
 
 
 <img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMRplot.png" width="400">
+
+## References
+MR.Egger is the Egger Regression approach to MR.<br/>
+```
+Bowden J., Davey Smith G., & Burgess S. (2015). Mendelian Randomization 
+with invalid instruments: effect estimation and bias detection through 
+Egger regression. International Journal of Epidemiology, 44(2), 512-525. 
+```
+
+MR.IVW is the Inverse Variant Weighted approach to MR.<br/>
+```
+Burgess, S., Butterworth, A., & Thompson, S. G. (2013). Mendelian 
+Randomization Analysis With Multiple Genetic Variants Using Summarized 
+Data. Genetic Epidemiology, 37(7), 658-665.
+```
+
+MR. Median is the Median Weighted approach to MR.<br/>
+```
+Bowden, J., Davey Smith, G., Haycock, P. C., & Burgess, S. (2016). Consistent 
+Estimation in Mendelian Randomization with Some Invalid Instruments Using a 
+Weighted Median Estimator. Genetic Epidemiology, 40(4), 304-314. 
+```
+
+
