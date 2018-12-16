@@ -1,6 +1,6 @@
 
 ## reverseC for Mendelian Randomization
-These functions examines the performance of Mendelian Randomization (MR) methods in the presence of reverse causality.
+These functions examines the performance of Mendelian Randomization (MR) methods in the presence of reverse causality. Through simulation studies, we examined the type 1 error rate and power for 3 popular MR methods when the role of the intermediate phenotype/ phenotype of interest and outcome were correctly specified and when they were reversed (i.e. reverse causality). 
 
 ## Installation
 ```
@@ -29,7 +29,9 @@ All of these values are inputted by the user (i.e. the intercept beta0 and the e
 After the SNPs X, mediator M, and outcome Y are generated, then the reverseMRsim function compares the power and type 1 error rate of the following 3 methods to detect the path from M to Y.
 
 ## Example:
-Here, we consider 10 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0.15,0.25)). We simulate no measurement error of the mediator, no unmeasured confounding of the mediator-outcome relationship, no direct effect from any SNP X to the outcome Y, and no interaction between any SNP X and mediator M on the outcome Y. This code runs 200 simulations for n subjects with n=1000.
+Here, we consider 10 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the ouctome Y (i.e. betaM=c(0,0.2,0.3)). This code runs 500 simulations for n subjects with n=1000. 
+
+For 1,000 subjects (n=1000), we generated 10 SNPs (nSNP=10) with a minor allele frequency of 20% (specified by MAF) that have a genetic effect size of 0.4 (specified by gammaX) on the normally distributed mediator and the mediator has an effect size varying from 0, 0.2 to 0.3 (specified by betaM) on the normally distributed outcome. We considered 3 MR approaches: Egger Regression, the Median Weighted Approach, and the Inverse Variance Weighted (IVW) Approach.
 
 ```
 library(reverseC)
