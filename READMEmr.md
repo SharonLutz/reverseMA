@@ -37,9 +37,9 @@ Here, we consider 4 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of 
 library(reverseC)
 ?reverseMRsim # For details on this function
 
-reverseMRsim(n = 1000, nSNP = 3, MAF = c(0.2, 0.2, 0.2), gamma0 = 0, gammaX = c(0.2, 0.2, 0.2), 
-varM = 1, beta0 = 0, betaM = c(0, 0.1,0.2), varY = 1, nSim = 100, plot.pdf = T, 
-plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1)
+reverseMRsim(n = 1000, nSNP = 10, MAF = c(0.2, 0.2, 0.2), gamma0 = 0, gammaX = c(0.4, 0.4, 0.4), 
+varM = 1, beta0 = 0, betaM = c(0, 0.2,0.3), varY = 1, nSim = 500, plot.pdf = T, 
+plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1001)
 
 ```
 
