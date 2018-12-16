@@ -1,6 +1,6 @@
 
 ## reverseC for Mendelian Randomization
-The reverseMRsim function in the reverseC R package examines the performance of Mendelian Randomization (MR) methods in the presence of reverse causality. Through simulation studies, this R function examines the type 1 error rate and power for 3 popular MR methods when the role of the intermediate phenotype/ phenotype of interest and outcome were correctly specified and when they were reversed (i.e. reverse causality). 
+The reverseMRsim function in the reverseC R package examines the performance of Mendelian Randomization (MR) methods in the presence of reverse causality. Through simulation studies, this R function examines the type 1 error rate and power for 3 popular MR methods when the role of the intermediate phenotype and outcome were correctly specified and when they were reversed (i.e. reverse causality). 
 
 ## Installation
 ```
