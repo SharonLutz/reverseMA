@@ -46,4 +46,4 @@ plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1001)
 ## Output
 For the example, we get the following matrix of results and corresponding plot.
 
-<img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMRplot.png" width="600">
+<img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMRplot.png" width="400">
