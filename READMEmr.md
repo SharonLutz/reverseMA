@@ -26,11 +26,9 @@ E\[Y\] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M
 
 All of these values are inputted by the user (i.e. the intercept beta0 and the effect of the mediator directly on the outcome as betaM).
 
-After the SNPs X, mediator M, and outcome Y are generated, then the reverseMRsim function compares the power and type 1 error rate of the following 3 methods to detect the path from M to Y.
+After the SNPs X, mediator M, and outcome Y are generated, then the reverseMRsim function compares the power and type 1 error rate of the following 3 methods to detect the path from M to Y: Egger Regression, the Median Weighted Approach, and the Inverse Variance Weighted (IVW) Approach.
 
 ## Example:
-Here, we consider 10 SNPs (nSNP=4) with MAF of 0.2. We vary the direct effect of the mediator M on the outcome Y (i.e. betaM=c(0,0.2,0.3)). This code runs 500 simulations for n subjects with n=1000. 
-
 For 1,000 subjects (n=1000), we generated 10 SNPs (nSNP=10) with a minor allele frequency of 20% (specified by MAF) that have a genetic effect size of 0.4 (specified by gammaX) on the normally distributed mediator and the mediator has an effect size varying from 0, 0.2 to 0.3 (specified by betaM) on the normally distributed outcome. We considered 3 MR approaches: Egger Regression, the Median Weighted Approach, and the Inverse Variance Weighted (IVW) Approach.
 
 ```
@@ -44,6 +42,7 @@ plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1001)
 ```
 
 ## Output
-For the example, we get the following matrix of results and corresponding plot.
+For the example, we get corresponding plot. In the plot below, the methods ending in NR have the true outcome as the outcome where as the methods ending in R have the true outcome reversed with the mediator. When the mediator and outcome are reversed, the Egger regression and the Median Weighted Approach have an inflated type 1 error rate. While the IVW approach does not have an inflated type 1 error rate, there is very little difference in the IVW approach if the mediator and outcome are reversed, which implies that this approach cannot easily distinguish the causal relationship between the mediator and outcome.
+
 
 <img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMRplot.png" width="400">
