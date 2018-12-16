@@ -24,6 +24,8 @@ function(n=1000,nSNP=3,MAF=c(0.2,0.2,0.2),gamma0=0,gammaX=c(0.2,0.2,0.2),varM=1,
   rownames(mat_total) <- c("PMR.EggerNR","PMR.IVWNR","PMR.MedianNR","PMR.EggerR","PMR.IVWR","PMR.MedianR")
 
   for(i in 1:nSim){
+    if(floor(i/10)==ceiling(i/10)){print(paste(i,"of",nSim,"simulations"))}
+    
     # Creat a results matrix for each simulation
     mat_results <- matrix(0,nrow=6,ncol=length(betaM))
     rownames(mat_results) <- c("PMR.EggerNR","PMR.IVWNR","PMR.MedianNR","PMR.EggerR","PMR.IVWR","PMR.MedianR")
