@@ -24,14 +24,5 @@ plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1)
 
 ## Output
 For the example, we get the following matrix of results and corresponding plot.
-```
-[[1]]
-             [,1] [,2] [,3]
-PMR.EggerNR  0.02 0.03 0.06
-PMR.IVWNR    0.07 0.08 0.31
-PMR.MedianNR 0.03 0.02 0.09
-PMR.EggerR   0.22 0.21 0.20
-PMR.IVWR     0.72 0.72 0.89
-PMR.MedianR  0.00 0.00 0.00
-```
+
 <img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMRplot.png" width="600">
