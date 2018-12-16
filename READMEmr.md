@@ -35,7 +35,7 @@ For 1,000 subjects (n=1000), we generated 10 SNPs (nSNP=10) with a minor allele 
 library(reverseC)
 ?reverseMRsim # For details on this function
 
-reverseMRsim(n = 1000, nSNP = 10, MAF = c(0.2, 0.2, 0.2), gamma0 = 0, gammaX = c(0.4, 0.4, 0.4), 
+reverseMRsim(n = 1000, nSNP = 10, MAF = rep(0.2, 10), gamma0 = 0, gammaX = rep(0.4, 10), 
 varM = 1, beta0 = 0, betaM = c(0, 0.2,0.3), varY = 1, nSim = 500, plot.pdf = T, 
 plot.name = "reverseMRplot.pdf", alpha_level = 0.05, SEED = 1001)
 
