@@ -14,6 +14,7 @@ devtools::install_github("SharonLutz/reverseC")
 
 ## Example:
 ```
+library(reverseC)
 ?reverseMAsim # For details on this function
 
 reverseMAsim(n = 1000, pX = 0.2, gamma0 = 0, gammaX = 0.1, varM = 1, beta0 = 0, betaX = 1, 
