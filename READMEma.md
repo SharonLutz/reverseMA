@@ -23,13 +23,5 @@ plot.name = "reverseMAplot.pdf", alpha_level = 0.05)
 ```
 
 ## Output
-For the example, we get the following matrix of results and corresponding plot.
 
-```
-[[1]]
-     DirectNR IndirectNR DirectR IndirectR
-[1,]        1       0.01    0.38      0.06
-[2,]        1       0.29    0.05      0.79
-[3,]        1       0.38    0.40      1.00
-```
 <img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMAplot.png" width="600">
