@@ -70,7 +70,7 @@ function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,betaM=c(0,0.1,
   
   if(plot.pdf){
     pdf(plot.name)
-    plot(-1,-1, xlim=c(0,max(betaM)), ylim=c(0,1),xlab="betaM values",ylab="")
+    plot(-1,-1, xlim=c(min(betaM),max(betaM)), ylim=c(0,1),xlab="betaM values",ylab="")
     points(betaM,mat_total[,"DirectNR"],type="b",lty=2,col=1,pch=1)
     points(betaM,mat_total[,"IndirectNR"],type="b",lty=3,col=2,pch=2)
     points(betaM,mat_total[,"DirectR"],type="b",lty=4,col=3,pch=3)
