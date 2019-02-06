@@ -18,7 +18,8 @@ function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,betaM=c(0,0.1,
   colnames(mat_total) <- c("DirectNR","IndirectNR","DirectR","IndirectR")
   
   for(i in 1:nSim){
-    
+    if(floor(i/10)==ceiling(i/10)){print(paste(i,"of",nSim,"simulations"))}
+      
     # Create matrix to store the results
     mat_results <- matrix(0,nrow=length(betaM),ncol=4)
     colnames(mat_results) <- c("DirectNR","IndirectNR","DirectR","IndirectR")
