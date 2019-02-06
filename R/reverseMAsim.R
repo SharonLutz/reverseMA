@@ -75,7 +75,7 @@ function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,betaM=c(0,0.1,
     points(betaM,mat_total[,"IndirectNR"],type="b",lty=3,col=2,pch=2)
     points(betaM,mat_total[,"DirectR"],type="b",lty=4,col=3,pch=3)
     points(betaM,mat_total[,"IndirectR"],type="b",lty=5,col=4,pch=4)
-    legend("topleft",lty=c(2:5),col=c(1:4),pch=c(1:4),legend=c("DirectNR","IndirectNR","DirectR","IndirectR"))
+    legend("middleleft",lty=c(2:5),col=c(1:4),pch=c(1:4),legend=c("DirectNR","IndirectNR","DirectR","IndirectR"))
     dev.off()
   }
   
