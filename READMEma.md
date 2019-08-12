@@ -32,4 +32,4 @@ plot.name = "reverseMAplotBoth.pdf", alpha_level = 0.05)
 
 ## Output
 
-<img src="https://github.com/SharonLutz/reverseC/blob/master/reverseMAplot.png" width="600">
+<img src="plots/reverseMAplot.png" width="600">
