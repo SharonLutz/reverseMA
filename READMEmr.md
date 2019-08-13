@@ -4,9 +4,17 @@ The reverseMRsim function in the reverseC R package examines the performance of 
 
 ## Installation
 ```
-install.packages("devtools") # devtools must be installed first
+# you need R v3.4 or higher
+# devtools must be installed first
+install.packages("devtools") 
 install.packages("mediation")
-install.packages("MendelianRandomization") #you need R v3.4 or higher
+install.packages("MendelianRandomization") 
+
+#this package does not install automatically, but is needed by TwoSampleMR
+install.packages("psych")
+
+# this is a dependency not present in R CRAN, it should be installed before reverseC
+devtools::install_github("MRCIEU/TwoSampleMR") 
 
 devtools::install_github("SharonLutz/reverseC")
 ```
@@ -53,7 +61,7 @@ For the example, we get corresponding plot. In the plot below, the methods endin
 library(reverseC)
 ?reverseDirection # For details on this function
 
-reverseMRsim(n = 1000)
+reverseDirection(n = 1000)
 
 ```
 
