@@ -1,22 +1,3 @@
-
-#' @export
-#' @title reverseDirection
-#' @description placeholder_text
-#' @author Sharon Lutz
-#' @param n n
-#' @param nSNP nSNP
-#' @param MAF MAF
-#' @param gamma0 gamma0
-#' @param gammaX gammaX
-#' @param varM varM
-#' @param beta0 beta0
-#' @param betaM betaM
-#' @param varY varY
-#' @param nSim nSim
-#' @param plot.pdf plot.pdf
-#' @param plot.name plot.name
-#' @param alpha_level alpha_level
-#' @param SEED SEED
 reverseDirection <-
   function(n=1000,nSNP=10,MAF=rep(0.04,nSNP),gamma0=0,gammaX=rep(0.1,nSNP),varM=1,beta0=0,betaM=seq(from=0,to=2,length.out=4),varY=1,nSim=500,plot.pdf=T,plot.name="reverseDirection.pdf",alpha_level=0.05,SEED=1){
     
@@ -115,13 +96,13 @@ reverseDirection <-
         if(mrs$correct_causal_direction==TRUE){matR[bM,"cdir"]<-matR[bM,"cdir"]+1}
         
         #steiger_test: p-value for inference of direction 
-        if(mrs$steiger_test<alpha){matR[bM,"pdir"]<-matR[bM,"pdir"]+1}
+        if(mrs$steiger_test<alpha_level){matR[bM,"pdir"]<-matR[bM,"pdir"]+1}
         
         #correct_causal_direction_adj: TRUE/FALSE, direction of causality for given measurement error parameters 
         if(mrs$correct_causal_direction_adj==TRUE){matR[bM,"cedir"]<-matR[bM,"cedir"]+1}
         
         #steiger_test_adj: p-value for inference of direction of causality for given measurement error parameters 
-        if(mrs$steiger_test_adj<alpha){matR[bM,"pedir"]<-matR[bM,"pedir"]+1}
+        if(mrs$steiger_test_adj<alpha_level){matR[bM,"pedir"]<-matR[bM,"pedir"]+1}
         
         #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
         matR[bM,"sr"]<-matR[bM,"sr"]+mrs$sensitivity_ratio
@@ -136,13 +117,13 @@ reverseDirection <-
         if(mrs$correct_causal_direction==TRUE){matR[bM,"cdirM"]<-matR[bM,"cdirM"]+1}
         
         #steiger_test: p-value for inference of direction 
-        if(mrs$steiger_test<alpha){matR[bM,"pdirM"]<-matR[bM,"pdirM"]+1}
+        if(mrs$steiger_test<alpha_level){matR[bM,"pdirM"]<-matR[bM,"pdirM"]+1}
         
         #correct_causal_direction_adj: TRUE/FALSE, direction of causality for given measurement error parameters 
         if(mrs$correct_causal_direction_adj==TRUE){matR[bM,"cedirM"]<-matR[bM,"cedirM"]+1}
         
         #steiger_test_adj: p-value for inference of direction of causality for given measurement error parameters 
-        if(mrs$steiger_test_adj<alpha){matR[bM,"pedirM"]<-matR[bM,"pedirM"]+1}
+        if(mrs$steiger_test_adj<alpha_level){matR[bM,"pedirM"]<-matR[bM,"pedirM"]+1}
         
         #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
         matR[bM,"srM"]<-matR[bM,"srM"]+mrs$sensitivity_ratio
