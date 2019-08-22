@@ -1,6 +1,9 @@
 reverseDirection <-
   function(n=1000,nSNP=10,MAF=rep(0.04,nSNP),gamma0=0,gammaX=rep(0.1,nSNP),varM=1,beta0=0,betaM=seq(from=0,to=2,length.out=4),varY=1,nSim=500,plot.pdf=T,plot.name="reverseDirection.pdf",alpha_level=0.05,SEED=1){
     
+    # load library for mr_steiger
+    library(TwoSampleMR)
+    
     # Set the seed
     set.seed(SEED)
     
@@ -19,8 +22,8 @@ reverseDirection <-
     #matrix to save MR steiger
     ################################################################################
     #save results for type 1 error rate betaM=0 and power betaM>0
-    matR <- matrix(0,ncol=11,nrow=length(betaM))
-    colnames(matR) <- c("cdir","cedir","pdir","pedir","sr","cdirM","cedirM","pdirM","pedirM","srM","corMY")
+   matR <- matrix(0,ncol=7,nrow=length(betaM))
+    colnames(matR) <- c("CorrectDirection","CorrectDirectionAdj","SteigerTest","SteigerTestAdj","SensitivityRatio","corX1Y","corMY")
     
     ################################################################################
     # cycle through the simulations
@@ -50,6 +53,7 @@ reverseDirection <-
         M <- rnorm(n,gamma0 + X%*%gammaX,sqrt(varM))
         Y <- rnorm(n,beta0 + betaM[bM]*M,sqrt(varY))
         
+        matR[bM,"corX1Y"]<-matR[bM,"corX1Y"]+cor(X[,1],Y)
         matR[bM,"corMY"]<-matR[bM,"corMY"]+cor(M,Y)
         
         ################################################################################
@@ -90,43 +94,25 @@ reverseDirection <-
         # MR Steiger correct way
         ################################################################################ 
         #A statistical test for whether the assumption that exposure causes outcome is valid
-        mrs<-TwoSampleMR::mr_steiger(p_exp, p_out, n_exp, n_out, r_exp, r_out, r_xxo = 1, r_yyo = 1)
+        mrs<-mr_steiger(p_exp, p_out, n_exp, n_out, r_exp, r_out, r_xxo = 1, r_yyo = 1)
         
         #correct_causal_direction: TRUE/FALSE 
-        if(mrs$correct_causal_direction==TRUE){matR[bM,"cdir"]<-matR[bM,"cdir"]+1}
-        
-        #steiger_test: p-value for inference of direction 
-        if(mrs$steiger_test<alpha_level){matR[bM,"pdir"]<-matR[bM,"pdir"]+1}
-        
+        if(mrs$correct_causal_direction==TRUE){matR[bM,"CorrectDirection"]<-matR[bM,"CorrectDirection"]+1}
+
         #correct_causal_direction_adj: TRUE/FALSE, direction of causality for given measurement error parameters 
-        if(mrs$correct_causal_direction_adj==TRUE){matR[bM,"cedir"]<-matR[bM,"cedir"]+1}
-        
+        if(mrs$correct_causal_direction_adj==TRUE){matR[bM,"CorrectDirectionAdj"]<-matR[bM,"CorrectDirectionAdj"]+1}
+
+        #steiger_test: p-value for inference of direction 
+        if(mrs$steiger_test<alpha){matR[bM,"SteigerTest"]<-matR[bM,"SteigerTest"]+1}
+
         #steiger_test_adj: p-value for inference of direction of causality for given measurement error parameters 
-        if(mrs$steiger_test_adj<alpha_level){matR[bM,"pedir"]<-matR[bM,"pedir"]+1}
+        if(mrs$steiger_test_adj<alpha){matR[bM,"SteigerTestAdj"]<-matR[bM,"SteigerTestAdj"]+1}
+
+        #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
+        matR[bM,"SensitivityRatio"]<-matR[bM,"SensitivityRatio"]+mrs$sensitivity_ratio
         
         #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
         matR[bM,"sr"]<-matR[bM,"sr"]+mrs$sensitivity_ratio
-        
-        ################################################################################
-        # MR Steiger reversed
-        ################################################################################ 
-        #A statistical test for whether the assumption that exposure causes outcome is valid
-        mrs<-TwoSampleMR::mr_steiger(p_out, p_exp, n_out, n_exp, r_out, r_exp, r_xxo = 1, r_yyo = 1)
-        
-        #correct_causal_direction: TRUE/FALSE 
-        if(mrs$correct_causal_direction==TRUE){matR[bM,"cdirM"]<-matR[bM,"cdirM"]+1}
-        
-        #steiger_test: p-value for inference of direction 
-        if(mrs$steiger_test<alpha_level){matR[bM,"pdirM"]<-matR[bM,"pdirM"]+1}
-        
-        #correct_causal_direction_adj: TRUE/FALSE, direction of causality for given measurement error parameters 
-        if(mrs$correct_causal_direction_adj==TRUE){matR[bM,"cedirM"]<-matR[bM,"cedirM"]+1}
-        
-        #steiger_test_adj: p-value for inference of direction of causality for given measurement error parameters 
-        if(mrs$steiger_test_adj<alpha_level){matR[bM,"pedirM"]<-matR[bM,"pedirM"]+1}
-        
-        #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
-        matR[bM,"srM"]<-matR[bM,"srM"]+mrs$sensitivity_ratio
         
         ################################################################################
         # end loops
@@ -139,7 +125,7 @@ reverseDirection <-
     if(plot.pdf){
       pdf(plot.name)
       plot(-2,-2,xlim=c(min(betaM),max(betaM)+0.05),ylim=c(0.5,1),main="",xlab=expression(beta),ylab="Correct Direction (% of simulations)")
-      lines(betaM,mat_total[,"cdir"],col=1,pch=1,type="b")
+      lines(betaM,mat_total[,"CorrectDirection"],col=1,pch=1,type="b")
       dev.off()
     }
     
