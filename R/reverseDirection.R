@@ -1,5 +1,7 @@
 reverseDirection <-
-  function(n=1000,nSNP=10,MAF=rep(0.04,nSNP),gamma0=0,gammaX=rep(0.1,10),varM=1,beta0=0,betaM=seq(from=0,to=2,length.out=4),varY=1,nSim=500,plot.pdf=T,plot.name="reverseDirection.pdf",alpha_level=0.05,SEED=1){
+  function(n=1000,nSNP=10,MAF=rep(0.04,10),gamma0=0,gammaX=rep(0.1,10),varM=1,beta0=0,
+           betaM=seq(from=0,to=2,length.out=4),varY=1,nSim=500,plot.pdf=T,
+           plot.name="reverseDirection.pdf",alpha_level=0.05,SEED=1){
     
     # load library for mr_steiger
     library(TwoSampleMR)
