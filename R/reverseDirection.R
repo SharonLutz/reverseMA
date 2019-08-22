@@ -111,9 +111,6 @@ reverseDirection <-
         #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
         matR[bM,"SensitivityRatio"]<-matR[bM,"SensitivityRatio"]+mrs$sensitivity_ratio
         
-        #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
-        matR[bM,"sr"]<-matR[bM,"sr"]+mrs$sensitivity_ratio
-        
         ################################################################################
         # end loops
         ################################################################################    
