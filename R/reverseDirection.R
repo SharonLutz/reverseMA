@@ -145,6 +145,7 @@ reverseDirection <-
     
     # Print out the matrix but use list
     #list(mat_total)
-    mat_total
+    write.matrix(mat_total)
+  
     
   }
