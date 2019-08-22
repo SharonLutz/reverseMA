@@ -147,6 +147,7 @@ reverseDirection <-
     listM<-list(mat_total)
     names(listM)<-"matrix"
    listM
+    print("test")
   
     
   }
