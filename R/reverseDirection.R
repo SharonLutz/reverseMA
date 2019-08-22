@@ -144,8 +144,9 @@ reverseDirection <-
     }
     
     # Print out the matrix but use list
-    #list(mat_total)
-    write.matrix(mat_total)
+    listM<-list(mat_total)
+    names(listM)<-"matrix"
+   listM
   
     
   }
