@@ -144,6 +144,7 @@ reverseDirection <-
     }
     
     # Print out the matrix but use list
-    list(mat_total)
+    #list(mat_total)
+    mat_total
     
   }
