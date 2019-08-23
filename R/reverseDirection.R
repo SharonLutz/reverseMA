@@ -24,8 +24,8 @@ reverseDirection <-
     #matrix to save MR steiger
     ################################################################################
     #save results for type 1 error rate betaM=0 and power betaM>0
-   matR <- matrix(0,ncol=7,nrow=length(betaM))
-    colnames(matR) <- c("CorrectDirection","CorrectDirectionAdj","SteigerTest","SteigerTestAdj","SensitivityRatio","corX1Y","corMY")
+   matR <- matrix(0,ncol=8,nrow=length(betaM))
+    colnames(matR) <- c("CorrectDirection","CorrectDirectionAdj","SteigerTest","SteigerTestAdj","SensitivityRatio","corX1M","corX1Y","corMY")
     
     ################################################################################
     # cycle through the simulations
@@ -56,6 +56,7 @@ reverseDirection <-
         Y <- rnorm(n,beta0 + betaM[bM]*M,sqrt(varY))
         
         matR[bM,"corX1Y"]<-matR[bM,"corX1Y"]+cor(X[,1],Y)
+        matR[bM,"corX1M"]<-matR[bM,"corX1M"]+cor(X[,1],M)
         matR[bM,"corMY"]<-matR[bM,"corMY"]+cor(M,Y)
         
         ################################################################################
