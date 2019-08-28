@@ -124,7 +124,7 @@ reverseDirection <-
     
     if(plot.pdf){
       pdf(plot.name)
-      plot(-2,-2,xlim=c(min(betaM),max(betaM)+0.05),ylim=c(0,1),main="",xlab=expression(beta),ylab="Correct Direction (% of simulations)")
+      plot(-2,-2,xlim=c(min(betaM),max(betaM)),ylim=c(0,1),main="",xlab=expression(beta),ylab="Correct Direction (% of simulations)")
       lines(betaM,mat_total[,"CorrectDirection"],col=1,pch=1,type="b")
       dev.off()
     }
