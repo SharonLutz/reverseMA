@@ -7,3 +7,11 @@ install.packages("devtools") # devtools must be installed first
 
 devtools::install_github("SharonLutz/reverseMA")
 ```
+
+## Test
+```
+library(reverseMA)
+?reverseMA
+
+reverseMA(n=100,nSim=10)
+```
