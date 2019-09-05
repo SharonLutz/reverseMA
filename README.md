@@ -39,4 +39,4 @@ plot.name = "reverseMAplotBoth.pdf", alpha_level = 0.05)
 
 ## Output
 
-<img src="reverseMAplot.png" width="600">
+<img src="reverseMAplot.png" width="400">
