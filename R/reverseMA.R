@@ -7,7 +7,7 @@ reverseMA <- function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,b
   
   if(alpha_level>1 | alpha_level<0){stop("Error: alpha_level must be between 0 and 1")}
   
-  cat("generating random data matrix")
+  cat("generating random data matrix\n")
   
   mat_total <- matrix(0,nrow=length(betaM),ncol=4)
   colnames(mat_total) <- c("DirectNR","IndirectNR","DirectR","IndirectR")
@@ -16,7 +16,7 @@ reverseMA <- function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,b
                                      beta0=beta0, betaX=betaX, betaM=betaM, varY=varY, nSim=nSim, 
                                      nSimImai=nSimImai, SEED=SEED)
   
-  cat("constructing and running mediation on models")
+  cat("constructing and running mediation on models\n")
   
   if(use_multi_processing){
     options(mediate.jobs = num_jobs)
@@ -39,7 +39,7 @@ reverseMA <- function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,b
   }
   rm(data_matrix)
   
-  # cat("processing results")
+  cat("processing results\n")
   for(i in 1:nSim){
     #if(floor(i/10)==ceiling(i/10)){print(paste(i,"of",nSim,"simulations"))}
     
