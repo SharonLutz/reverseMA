@@ -4,8 +4,8 @@ Examines the indirect and direct path in mediation analysis when the mediator an
 
 ## Installation
 ```
-# devtools must be installed first
-install.packages("devtools") 
+install.packages("mediation") 
+install.packages("devtools") # devtools must be installed first
 
 devtools::install_github("SharonLutz/reverseMA")
 ```
