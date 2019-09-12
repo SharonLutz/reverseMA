@@ -14,21 +14,30 @@ devtools::install_github("SharonLutz/reverseMA")
 ## Example:
 ```
 library(reverseMA)
-?reverseMA # For details on this function
 
+# Direct effect of the exposure X on the outcome Y, but no indirect effect of the exposure X on the outcome Y through the mediator M
 reverseMA(n = 1000, pX = 0.2, gamma0 = 0, gammaX = 0.2, varM = 1, beta0 = 0, betaX = 0, 
-betaM = c(0.1, 0.2, 0.3), varY = 1, nSim = 500, nSimImai = 500, SEED = 1, plot.pdf = T, 
-plot.name = "reverseMAplot.pdf", alpha_level = 0.05)
+betaM = c(0.1, 0.2, 0.3), varY = 1, nSim = 100, nSimImai = 100, SEED = 1, plot.pdf = T, 
+plot.name = "reverseMAplotIndirect.pdf", alpha_level = 0.05)
 
+# Indirect effect of the exposure X on the outcome Y through the mediator M, but no direct effect of the exposure X on the outcome Y
  reverseMA(n = 1000, pX = 0.2, gamma0 = 0, gammaX = 0, varM = 1, beta0 = 0, betaX = 0.2, 
-betaM = c(0.1, 0.2, 0.3), varY = 1, nSim = 500, nSimImai = 500, SEED = 1, plot.pdf = T, 
+betaM = c(0.1, 0.2, 0.3), varY = 1, nSim = 100, nSimImai = 100, SEED = 1, plot.pdf = T, 
 plot.name = "reverseMAplotDirect.pdf", alpha_level = 0.05)
 
+#Both a direct and indirect effect of the exposure X on the outcome Y for a mediator M
  reverseMA(n = 1000, pX = 0.2, gamma0 = 0, gammaX = 0.2, varM = 1, beta0 = 0, betaX = 0.2, 
-betaM = c(0.1, 0.2, 0.3), varY = 1, nSim = 500, nSimImai = 500, SEED = 1, plot.pdf = T, 
+betaM = c(0.1, 0.2, 0.3), varY = 1, nSim = 100, nSimImai = 100, SEED = 1, plot.pdf = T, 
 plot.name = "reverseMAplotBoth.pdf", alpha_level = 0.05)
 ```
 
 ## Output
+Direct effect of the exposure X on the outcome Y, but no indirect effect of the exposure X on the outcome Y through the mediator M
+<img src="plots/reverseMAplot.png" width="400">
 
-<img src="plots/reverseMAplot.png" width="600">
+ Indirect effect of the exposure X on the outcome Y through the mediator M, but no direct effect of the exposure X on the outcome Y
+<img src="plots/reverseMAplot.png" width="400">
+
+Both a direct and indirect effect of the exposure X on the outcome Y for a mediator M
+<img src="plots/reverseMAplot.png" width="400">
+
