@@ -33,7 +33,7 @@ plot.name = "reverseMAplotBoth.pdf", alpha_level = 0.05)
 
 ## Output
 Direct effect of the exposure X on the outcome Y, but no indirect effect of the exposure X on the outcome Y through the mediator M
-<img src="reverseMAplotIndirect" width="400">
+<img src="reverseMAplotIndirect.png" width="400">
 
  Indirect effect of the exposure X on the outcome Y through the mediator M, but no direct effect of the exposure X on the outcome Y
 <img src="plots/reverseMAplot.png" width="400">
