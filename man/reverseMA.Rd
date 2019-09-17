@@ -58,7 +58,7 @@ the significance level
 The function outputs a matrix of the results and produces a plot.
 }
 \author{
-Sharon Lutz, Annie Thwing
+Sharon Lutz, Annie Thwing, Michael Gooch
 }
 \examples{
 	reverseMA(n = 100,nSim = 10)
