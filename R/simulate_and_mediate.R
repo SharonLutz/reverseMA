@@ -1,6 +1,7 @@
 simulate_and_mediate <- function(data_element){
   
-  df = data.frame(X=data_element$X, Y1=data_element$Y, M1=data_element$M, M2=data_element$Y, Y2=data_element$M)
+  nSimImai = data_element[["nSimImai"]]
+  df = data.frame(X=data_element[["X"]], Y1=data_element[["Y"]], M1=data_element[["M"]], M2=data_element[["Y"]], Y2=data_element[["M"]])
   
   med.fit = lm("M1~X", data=df)
   out.fit = lm("Y1~X+M1", data=df)
@@ -11,18 +12,18 @@ simulate_and_mediate <- function(data_element){
     old_rand_state = .GlobalEnv[[".Random.seed"]]
   }
   
-  .GlobalEnv[[".Random.seed"]] = data_element$RAND_STATE
+  .GlobalEnv[[".Random.seed"]] = data_element[["RAND_STATE"]]
   
-  med.out <- mediation::mediate(med.fit, out.fit, treat = "X",mediator = "M1",sims = data_element$nSimImai)
-  med.out.r <- mediation::mediate(med.fit.r, out.fit.r, treat = "X",mediator = "M2",sims = data_element$nSimImai)
+  med.out <- mediation::mediate(med.fit, out.fit, treat = "X",mediator = "M1",sims = nSimImai)
+  med.out.r <- mediation::mediate(med.fit.r, out.fit.r, treat = "X",mediator = "M2",sims = nSimImai)
   
   summary_obj = summary(med.out)
   summary_obj.r = summary(med.out.r)
   
-  result = list(pval_direct = summary_obj$z.avg.p,
-                pval_indirect = summary_obj$d.avg.p,
-                pval_direct_r = summary_obj.r$z.avg.p,
-                pval_indirect_r = summary_obj.r$d.avg.p)
+  result = list(pval_direct = summary_obj[["z.avg.p"]],
+                pval_indirect = summary_obj[["d.avg.p"]],
+                pval_direct_r = summary_obj.r[["z.avg.p"]],
+                pval_indirect_r = summary_obj.r[["d.avg.p"]])
   
   if(!is.null(old_rand_state)){
     .GlobalEnv[[".Random.seed"]] = old_rand_state

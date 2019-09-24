@@ -4,14 +4,6 @@ generate_data_matrix <- function(
   varM=1,varY=1,
   beta0=0,betaX=1,betaM=c(0,0.1,0.2),
   nSim=100, nSimImai=1000, SEED=1){
-  # Error checks
-  if(n<0 | n==0 | floor(n)!=ceiling(n) ){stop("Error: n must be an integer greater than or equal to 1")}
-  if(pX<0 | pX>1){stop("Error: pX must be greater than 0 and less than 1")}
-  if(!varM>0){stop("Error: varM must be greater than 0")}
-  if(!varY>0){stop("Error: varY must be greater than 0")}
-  if(length(unique(betaM))<2){stop("Error: betaM must be a vector with at least two values")}
-  if(length(nSimImai) != 1){stop ("Error: nSimImai must be a single integer value")}
-  if(nSimImai<=0 || floor(nSimImai)!=ceiling(nSimImai) ){stop("Error: n must be an integer greater than or equal to 1")}
   
   num_betaM = length(betaM)
   

@@ -5,7 +5,9 @@ reverseMA <- function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,b
   pbapply::pboptions(style=1,type="timer")
   
   
-  if(alpha_level>1 | alpha_level<0){stop("Error: alpha_level must be between 0 and 1")}
+  input_error_check(n=n,pX=pX,gamma0=gamma0,gammaX=gammaX,varM=varM,beta0=beta0,betaX=betaX,betaM=betaM,varY=varY,
+                    nSim=nSim,nSimImai=nSimImai,alpha_level=alpha_level, 
+                    use_multi_processing=use_multi_processing, num_jobs=num_jobs)
   
   cat("generating random data matrix\n")
   

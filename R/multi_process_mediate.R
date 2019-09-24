@@ -1,24 +1,10 @@
 
-mediate_parallel.unix <- function(list_of_job_args, nSimImai=1000, num_jobs=getOption("mediate.jobs", parallel::detectCores() - 1)) {
-  g_env = globalenv()
-  if(exists("nSimImai", envir = g_env)){
-    old_nSimImai = g_env[["nSimImai"]]
-  } else {
-    old_nSimImai = NULL
-  }
-  
-  # TODO: make sure nSimImai value exists for all processes created by mclapply
-  g_env[["nSimImai"]]=nSimImai
+mediate_parallel.unix <- function(list_of_job_args, num_jobs=getOption("mediate.jobs", parallel::detectCores() - 1)) {
   options(mc.cores = num_jobs)
   
   result <- pbapply::pblapply(list_of_job_args, simulate_and_mediate, cl = num_jobs)
-  
   attr(result, "dim") <- dim(list_of_job_args)
-  if(is.null(old_nSimImai)){
-    rm("nSimImai", envir=g_env)
-  } else {
-    g_env[["nSimImai"]] = old_nSimImai
-  }
+  
   return(result)
 }
 
