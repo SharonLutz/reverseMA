@@ -51,17 +51,19 @@ reverseMA <- function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,b
     
     for(bM.ind in 1:length(betaM)){
       
+      data_matrix_element = result.matrix[[bM.ind,i]]
+      
       # Get the direct and indirect effects
-      pval_direct <- result.matrix[[bM.ind,i]]$pval_direct
-      pval_indirect <- result.matrix[[bM.ind,i]]$pval_indirect
+      pval_direct <- data_matrix_element[["pval_direct"]]
+      pval_indirect <- data_matrix_element[["pval_indirect"]]
       
       # Add to the matrix
       if(pval_direct<alpha_level){mat_results[bM.ind,"DirectNR"] <- mat_results[bM.ind,"DirectNR"]+1 }
       if(pval_indirect<alpha_level){mat_results[bM.ind,"IndirectNR"] <- mat_results[bM.ind,"IndirectNR"]+1 }
       
       # Get the direct and indirect effects
-      pval_direct_r <- result.matrix[[bM.ind,i]]$pval_direct_r
-      pval_indirect_r <- result.matrix[[bM.ind,i]]$pval_indirect_r
+      pval_direct_r <- data_matrix_element[["pval_direct_r"]]
+      pval_indirect_r <- data_matrix_element[["pval_indirect_r"]]
       
       # Add to the matrix
       if(pval_direct_r<alpha_level){mat_results[bM.ind,"DirectR"] <- mat_results[bM.ind,"DirectR"]+1 }

@@ -17,8 +17,8 @@ simulate_and_mediate <- function(data_element){
   med.out <- mediation::mediate(med.fit, out.fit, treat = "X",mediator = "M1",sims = nSimImai)
   med.out.r <- mediation::mediate(med.fit.r, out.fit.r, treat = "X",mediator = "M2",sims = nSimImai)
   
-  summary_obj = summary(med.out)
-  summary_obj.r = summary(med.out.r)
+  summary_obj = mediation::summary.mediate(med.out)
+  summary_obj.r = mediation::summary.mediate(med.out.r)
   
   result = list(pval_direct = summary_obj[["z.avg.p"]],
                 pval_indirect = summary_obj[["d.avg.p"]],
