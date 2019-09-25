@@ -31,7 +31,7 @@ reverseMA <- function(n=1000,pX=0.2,gamma0=0,gammaX=0.1,varM=1,beta0=0,betaX=1,b
     if((nSim / num_jobs) < 1.0){
       warning(paste("you don't have enough Simulations in nSim:", nSim, " to fully benefit from num_jobs:", num_jobs, sep=""))
     }
-    result.matrix = mediate_parallel(data_matrix, nSimImai)
+    result.matrix = mediate_parallel(data_matrix, num_jobs)
   } else {
     if(num_jobs != 1){
       stop("num_jobs != 1 and use_multi_processing=F")

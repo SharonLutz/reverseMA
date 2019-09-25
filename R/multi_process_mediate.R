@@ -8,7 +8,7 @@ mediate_parallel.unix <- function(list_of_job_args, num_jobs=getOption("mediate.
   return(result)
 }
 
-mediate_parallel.non_unix <-function(list_of_job_args, nSimImai=1000, num_jobs=getOption("mediate.jobs", parallel::detectCores() - 1)) {
+mediate_parallel.non_unix <-function(list_of_job_args, num_jobs=getOption("mediate.jobs", parallel::detectCores() - 1)) {
   options(cl.cores = num_jobs)
   snow::setDefaultClusterOptions(type="SOCK")
   this.cluster <- snow::makeCluster(num_jobs)
@@ -22,20 +22,18 @@ mediate_parallel.non_unix <-function(list_of_job_args, nSimImai=1000, num_jobs=g
     snow::clusterCall(cl=this.cluster,function(){suppressMessages(library(reverseMA))})
   }
   
-  snow::clusterExport(cl=this.cluster,c("nSimImai"),envir=environment())
-  
   result <- pbapply::pblapply(list_of_job_args, simulate_and_mediate, cl=this.cluster)
   
   dim(result) = dim(list_of_job_args)
   return (result)
 }
 
-mediate_parallel <- function(list_of_job_args, nSimImai=1000, num_jobs=getOption("mediate.jobs", parallel::detectCores() - 1)){
+mediate_parallel <- function(list_of_job_args, num_jobs=getOption("mediate.jobs", parallel::detectCores() - 1)){
   pbapply::pboptions(type="timer", style=1)
   if(.Platform$OS.type == "unix") {
-    result <- mediate_parallel.unix(list_of_job_args=list_of_job_args, nSimImai=nSimImai, num_jobs=num_jobs)
+    result <- mediate_parallel.unix(list_of_job_args=list_of_job_args, num_jobs=num_jobs)
   } else {
-    result <- mediate_parallel.non_unix(list_of_job_args=list_of_job_args, nSimImai=nSimImai, num_jobs=num_jobs)
+    result <- mediate_parallel.non_unix(list_of_job_args=list_of_job_args, num_jobs=num_jobs)
   }
   return(result)
 }
