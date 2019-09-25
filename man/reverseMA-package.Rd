@@ -1,0 +1,10 @@
+\name{reverseMA-package}
+\alias{reverseMA-package}
+\alias{reverseMA-pkg}
+\docType{package}
+\title{
+\packageTitle{reverseMA}
+}
+\description{
+\packageDescription{reverseMA}
+}

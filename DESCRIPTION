@@ -1,0 +1,9 @@
+Package: reverseMA
+Type: Package
+Title: Runs mediation analysis with the mediator and outcome both correctly and incorrectly specified.
+Version: 1.0
+Date: 2019-09-05
+Author: Sharon Lutz
+Maintainer: Sharon Lutz <smlutz@hsph.harvard.edu>
+Description: Runs simulation studies to examine mediation analysis with the mediator and outcome both correctly and incorrectly specified.
+License: GPL-2
