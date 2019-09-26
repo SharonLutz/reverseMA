@@ -60,6 +60,6 @@ Both a direct and indirect effect of the exposure X on the outcome Y for a media
 <img src="plots/reverseMAplotBoth.png" width="400">
 
 ## Speed Improvements using C++ Bindings and Threading
-There is another version of this package which implements support for threading and a version of the mediation algorithm implemented using RcppEigen which can provide a significant boost in speed akin to multiprocessing but with less of a memory footprint.
+A version of this package called reverseMAthread implements support for threading and a version of the mediation algorithm implemented using RcppEigen which can provide a significant boost in speed akin to multiprocessing but with less of a memory footprint.
 
 Find it here [ReverseMAthread](https://github.com/SharonLutz/reverseMAthread)
