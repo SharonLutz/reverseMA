@@ -26,7 +26,7 @@ E\[Y\] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X  + &beta;<sub>M</sub> M
 where beta0, betaX, and betaM are inputted by the user. beta0 and betaX are only allowed to be a single value (i.e. beta0=0), but betaM should be inputted as a vector (i.e. betaM = c(0.1, 0.2, 0.3)).
 
 ## Output
-After the SNP X, mediator M, and outcome Y are generated, then the reverseMA function runs mediation analysis twice: (1) the mediator and outcome are correctly specified, (2) the mediator and outcome are switched. A plot is then produced with the x axis for betaM (i.e. the relationship between the mediator and outcome) and the y-axis is the proportion of simulation where there was a significant direct or indirect effect.
+After the SNP X, mediator M, and outcome Y are generated, then the reverseMA function runs mediation analysis twice: (1) the mediator and outcome are correctly specified, (2) the mediator and outcome are switched. A plot is then produced where the x axis is the values of betaM (i.e. the relationship between the mediator and outcome) and the y-axis is the proportion of simulations where there was a significant direct or indirect effect.
 
 ## Example 1:
 For example 1, we generate a direct effect of the exposure X on the outcome Y (gammaX=0.2), but no indirect effect of the exposure X on the outcome Y through the mediator M (betaX=0).
