@@ -42,7 +42,7 @@ plot.name = "reverseMAplotDirect.pdf", alpha_level = 0.05)
 ```
 
 ## Output 1
- 
+ As seen in the plot below, there is a significant direct effect if the mediator and outcome are correctly specified (directNR), but counter to how the data was generated, there is a significant indirect effect if the mediator and outcome are incorrectly specified (indirectR).
 <img src="plots/reverseMAplotDirect.png" width="400">
 
 
@@ -60,7 +60,7 @@ plot.name = "reverseMAplotIndirect.pdf", alpha_level = 0.05)
 ```
 
 ## Output 2
-
+As seen in the plot below, there is a significant indirect effect if the mediator and outcome are correctly specified (indirectNR), but counter to how the data was generated, there is a significant direct effect if the mediator and outcome are incorrectly specified (directR).
 <img src="plots/reverseMAplotIndirect.png" width="400">
 
 
@@ -76,7 +76,7 @@ plot.name = "reverseMAplotBoth.pdf", alpha_level = 0.05)
 ```
 
 ## Output 3
-There is both a direct and indirect effect of the exposure X on the outcome Y for a mediator M seen in the plot below.
+As seen in the plot below, there is both a significant direct and indirect effect of the exposure X on the outcome Y for a mediator M.
 
 <img src="plots/reverseMAplotBoth.png" width="400">
 
