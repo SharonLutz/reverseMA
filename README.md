@@ -15,7 +15,7 @@ For n subjects (input n) for a given minor allele frequency (input pX), the SNP 
 
 Then, the mediator M is generated from a normal distribution with the variance (input varM) and the mean as follows:
 
-E\[M\] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub>  X<sub>i</sub> 
+E\[M\] = &gamma;<sub>o</sub> + &gamma;<sub>X</sub>  X
 
 where gamma0 and gammaX are inputted by the user.
 
