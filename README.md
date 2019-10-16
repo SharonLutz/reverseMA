@@ -29,7 +29,7 @@ where beta0, betaX, and betaM are inputted by the user. beta0 and betaX are only
 After the SNP X, mediator M, and outcome Y are generated, then the reverseMA function runs mediation analysis twice: (1) the mediator and outcome are correctly specified, (2) the mediator and outcome are switched. A plot is then produced where the x axis is the values of betaM (i.e. the relationship between the mediator and outcome) and the y-axis is the proportion of simulations where there was a significant direct or indirect effect.
 
 ## Example 1:
-For example 1, we generate a direct effect of the exposure X on the outcome Y (gammaX=0.2), but no indirect effect of the exposure X on the outcome Y through the mediator M (betaX=0).
+For example 1, we generate a direct effect of the exposure X on the outcome Y (gammaX=0.2), but no indirect effect of the exposure X on the outcome Y through the mediator M (betaX=0). For this example, there are 1000 subjects (n=1000), a MAF of 0.2 (pX=0.2), M is generated from a normal distribution with a variance of 1 (varM=1), Y is generated from a normal distribution with a variance of 1 (varY=1), and the strength of the association between M and Y vairaes from 0.1 to 0.3 (betaM = c(0.1, 0.2, 0.3)). The code below runs this example.
 ```
 library(reverseMA)
 
@@ -46,7 +46,7 @@ In the plot below, there is
 
 
 ## Example 2:
-For example 2, we generate an indirect effect of the exposure X on the outcome Y (betaX=0.2), but no direct effect of the exposure X on the outcome Y through the mediator M (gammaX=0).
+Example 2 is similar to Example 1 except we now generate an indirect effect of the exposure X on the outcome Y (betaX=0.2), but no direct effect of the exposure X on the outcome Y through the mediator M (gammaX=0). The code below runs this example.
 ```
 library(reverseMA)
 
@@ -58,13 +58,13 @@ plot.name = "reverseMAplotDirect.pdf", alpha_level = 0.05)
 ```
 
 ## Output 2
-Indirect effect of the exposure X on the outcome Y, but no direct effect of the exposure X on the outcome Y through the mediator M
+Indirect effect of the exposure X on the outcome Y, but no direct effect of the exposure X on the outcome Y through the mediator M.
 
 <img src="plots/reverseMAplotIndirect.png" width="400">
 
 
 ## Example 3:
-For example 3, we generate both a direct (betaX=0.2) and indirect effect (gammaX=0.2) of the exposure X on the outcome Y for a mediator M
+For example 3 is similar to Example 1 except we generate both a direct (betaX=0.2) and indirect effect (gammaX=0.2) of the exposure X on the outcome Y for a mediator M.
 ```
 library(reverseMA)
 
@@ -75,7 +75,7 @@ plot.name = "reverseMAplotBoth.pdf", alpha_level = 0.05)
 ```
 
 ## Output 3
-Both a direct and indirect effect of the exposure X on the outcome Y for a mediator M
+Both a direct and indirect effect of the exposure X on the outcome Y for a mediator M.
 
 <img src="plots/reverseMAplotBoth.png" width="400">
 
