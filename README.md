@@ -48,7 +48,7 @@ plot.name = "reverseMAplotDirect.pdf", alpha_level = 0.05)
 
 
 ## Example 2:
-Example 2 is similar to Example 1 except we now generate an indirect effect of the exposure X on the outcome Y (gammaX=0.2), but no direct effect of the exposure X on the outcome Y through the mediator M (betaX=0). The code below runs this example.
+Example 2 is similar to Example 1 except we now generate an indirect effect of the exposure X on the outcome Y through the mediator M(gammaX=0.2), but no direct effect of the exposure X on the outcome Y (betaX=0). The code below runs this example.
 ```
 library(reverseMA)
 
