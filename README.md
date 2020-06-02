@@ -82,6 +82,9 @@ As seen in the plot below, there is both a significant direct and indirect effec
 
 <img src="plots/reverseMAplotBoth.png" width="400">
 
+## Reference
+**Lutz SM**, Sordillo J, Hokanson JE, Wu AC, Lange C. (2020) The Effects of Misspecification of the Mediator and Outcome in Mediation Analysis. Gen Epi. In Press.
+
 ## Speed Improvements using C++ Bindings and Threading
 A version of this package called reverseMAthread implements support for threading and a version of the mediation algorithm implemented using RcppEigen which can provide a significant boost in speed akin to multiprocessing but with less of a memory footprint.
 
