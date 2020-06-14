@@ -89,3 +89,4 @@ As seen in the plot below, there is both a significant direct and indirect effec
 A version of this package called reverseMAthread implements support for threading and a version of the mediation algorithm implemented using RcppEigen which can provide a significant boost in speed akin to multiprocessing but with less of a memory footprint.
 
 Find it here [ReverseMAthread](https://github.com/SharonLutz/reverseMAthread)
+
